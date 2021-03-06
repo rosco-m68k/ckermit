@@ -6098,7 +6098,8 @@ linux:
 	HAVE_LIBCURSES=''; \
 	if test -f /usr/lib64/libncurses.so || \
 	   test -f /usr/lib/libncurses.a  || \
-	   test -f /usr/lib/libncurses.so; then \
+	   test -f /usr/lib/libncurses.so || \
+	   test -f /lib/x86_64-linux-gnu/libncurses.so; then \
 	  HAVE_LIBCURSES='-lncurses'; \
 	else if test -f /usr/lib64/libcurses.so || \
 	   test -f /usr/lib/libcurses.a || \

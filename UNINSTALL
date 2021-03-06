@@ -1,0 +1,25 @@
+# C-Kermit UNINSTALL script
+# Fri  5 Mar 23:51:30 GMT 2021
+
+CKVER=9.0.302
+PrN Uninstalling C-Kermit version 9.0.302...
+set flag=f
+PrC Removing binaries
+RmF /usr/local/bin/kermit-sshsub
+RmF /usr/local/bin/kermit
+RmF /usr/local/bin/ckermit.ini
+EfM
+set flag=f
+PrC Removing man pages
+RmF /usr/local/man/man1/kermit.1
+EfM
+set flag=d
+PrN Removing empty dirs...
+RmD /usr/local/bin
+RmD 
+RmD 
+RmD 
+RmD /usr/local/man/man1
+RmD 
+EfM
+PrN C-Kermit version 9.0.302 is uninstalled!

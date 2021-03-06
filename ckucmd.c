@@ -7369,6 +7369,7 @@ cmdconchk() {
 #else  /* CMD_CONINC */
 
 /* Here we must look inside the stdin buffer - highly platform dependent */
+#define _IO_file_flags		// Hack for Ubuntu 20.04!
 
 #ifdef _IO_file_flags			/* Linux */
     x = (int) ((stdin->_IO_read_end) - (stdin->_IO_read_ptr));

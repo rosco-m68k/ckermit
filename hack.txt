@@ -1,0 +1,12 @@
+diff --git a/ckucmd.c b/ckucmd.c
+index 274dc2d..96de98c 100644
+--- a/ckucmd.c
++++ b/ckucmd.c
+@@ -7369,6 +7369,7 @@ cmdconchk() {
+ #else  /* CMD_CONINC */
+ 
+ /* Here we must look inside the stdin buffer - highly platform dependent */
++#define _IO_file_flags		// Utter hackery!!
+ 
+ #ifdef _IO_file_flags			/* Linux */
+     x = (int) ((stdin->_IO_read_end) - (stdin->_IO_read_ptr));

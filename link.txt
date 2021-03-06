@@ -1,0 +1,1 @@
+gcc -o wermit ckcmai.o ckclib.o ckutio.o ckufio.o ckcfns.o ckcfn2.o ckcfn3.o ckuxla.o ckcpro.o ckucmd.o ckuus2.o ckuus3.o ckuus4.o ckuus5.o ckuus6.o ckuus7.o ckuusx.o ckuusy.o ckuusr.o ckucns.o ckudia.o ckuscr.o ckcnet.o ckusig.o ckctel.o ckcuni.o ckupty.o ckcftp.o ckuath.o ck_crp.o ck_ssl.o -lutil -lresolv -lcrypt -lm -lncurses
