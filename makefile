@@ -6096,16 +6096,12 @@ linux:
 	then HAVE_OPENPTY='-DHAVE_OPENPTY'; \
 	else HAVE_OPENPTY=''; fi ; \
 	HAVE_LIBCURSES=''; \
-	if test -f /usr/lib64/libncurses.so || \
-	   test -f /usr/lib/libncurses.a  || \
-	   test -f /usr/lib/libncurses.so || \
-	   test -f /lib/x86_64-linux-gnu/libncurses.so; then \
+	if `$(LD) -lncurses`; then \
 	  HAVE_LIBCURSES='-lncurses'; \
-	else if test -f /usr/lib64/libcurses.so || \
-	   test -f /usr/lib/libcurses.a || \
-	   test -f /usr/lib/libcurses.so; then \
+	else if `$(LD) -lcurses`; then \
 	     HAVE_LIBCURSES='-lcurses'; fi; fi; \
 	HAVE_CURSES=''; \
+	rm -rf a.out; \
 	if test -n '$$HAVE_LIBCURSES'; then \
 	  if test -f /usr/include/ncurses.h; then \
 	    HAVE_CURSES='-DCK_NCURSES  -I/usr/include/ncurses'; \
